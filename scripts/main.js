@@ -14,7 +14,7 @@ function setAudio() {
   fileName.textContent = filesInput.files[audioIndex].name;
   audio.play();
 }
-setInterval(() => alertContainer.remove(), 2000);
+setInterval(() => alertContainer.remove(), 6000);
 alertContainer.addEventListener("click", function () {
   this.remove();
 });
