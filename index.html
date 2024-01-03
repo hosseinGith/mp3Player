@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>mp3 Player</title>
+  </head>
+  <body>
+    <div class="alertContainer">
+      <p>
+        این برنامه را برای گوش دادن به موسیقیای حرام نساختم و گناه روشن موسیقی
+        در این برنامه با خودت هست !!
+      </p>
+    </div>
+    <div class="container">
+      <div class="inputFiles">
+        <div class="fileName">
+          <p>choose a Audio</p>
+        </div>
+        <div class="filesArea">
+          <div class="circle"></div>
+        </div>
+        <input type="file" multiple accept="audio/*" class="mp3File" />
+        <input type="range" value="0" class="mp3File" />
+      </div>
+      <div class="audioControles">
+        <button class="preview">قبلی</button>
+        <button class="stop">مکث</button>
+        <button class="next">بعدی</button>
+      </div>
+    </div>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

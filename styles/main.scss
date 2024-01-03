@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: vazir;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(#567a1bad, #206f9cd5);
+}
+.alertContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
+  position: fixed;
+  backdrop-filter: blur(5px);
+  background-color: #0000002d;
+  font-size: 20px;
+  text-shadow: 0 0 5px #eee;
+  z-index: 2;
+  p {
+    max-width: 500px;
+  }
+}
+.container {
+  max-width: 400px;
+  width: 90%;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .inputFiles {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input[type="file"] {
+      display: none;
+    }
+    .fileName {
+      width: 100%;
+      p {
+        padding: 0 20px;
+        width: 100%;
+        overflow: hidden;
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        font-size: 20px;
+      }
+    }
+    .filesArea {
+      background: linear-gradient(#eee, #4d4a4a);
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .circle {
+        width: calc(100% / 2);
+        height: calc(100% / 2);
+        border-radius: 50%;
+        border: 5px solid #116f86;
+      }
+    }
+    .filesArea:hover {
+      opacity: 0.8;
+    }
+  }
+  .audioControles {
+    width: 100%;
+    margin: 20px 0;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    button {
+      padding: 5px 20px;
+      background-color: #30c951;
+      border-radius: 20px;
+      border: 0;
+      cursor: pointer;
+    }
+    :active {
+      opacity: 0.8;
+    }
+  }
+}
