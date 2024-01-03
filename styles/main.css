@@ -3,6 +3,8 @@
   margin: 0;
   box-sizing: border-box;
   font-family: vazir;
+  user-select: none;
+  user-zoom: none;
 }
 
 body {
@@ -51,9 +53,45 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .container .inputFiles input[type=file] {
   display: none;
+}
+.container .inputFiles input[type=range] {
+  position: absolute;
+  left: -50px;
+  top: 45%;
+  transform: translate(0, -50%);
+  rotate: 90deg;
+  outline: 0;
+}
+.container .inputFiles .audioTime {
+  width: 100%;
+  height: 15px;
+  margin: 10px 0;
+  background-color: #cecece;
+  border-radius: 20px;
+  position: relative;
+}
+.container .inputFiles .audioTime .circleTime {
+  display: inline-block;
+  max-width: 100%;
+  width: 500px;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  background-color: #ff0000;
+  border-radius: 20px;
+}
+.container .inputFiles .audioTime .circleTime::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  right: 0;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #000;
 }
 .container .inputFiles .fileName {
   width: 100%;

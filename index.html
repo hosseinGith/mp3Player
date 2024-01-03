@@ -21,8 +21,23 @@
         <div class="filesArea">
           <div class="circle"></div>
         </div>
-        <input type="file" multiple accept="audio/*" class="mp3File" />
-        <input type="range" value="0" class="mp3File" />
+        <input
+          type="file"
+          class="fileInput"
+          multiple
+          accept="audio/*"
+          class="mp3File"
+        />
+        <input
+          type="range"
+          class="volume"
+          value="100"
+          max="100"
+          class="mp3File"
+        />
+        <div class="audioTime">
+          <span class="circleTime"></span>
+        </div>
       </div>
       <div class="audioControles">
         <button class="preview">قبلی</button>
