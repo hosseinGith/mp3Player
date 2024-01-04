@@ -69,7 +69,6 @@ filesArea.addEventListener("click", function () {
 volume.oninput = () => {
   console.log();
   audio.volume = volume.value / 100;
-  console.log(volume.value / 100);
 };
 volume.addEventListener("", () => {});
 filesInput.addEventListener("change", () => {
@@ -88,7 +87,6 @@ preview.addEventListener("click", () => {
 stopAudio.addEventListener("click", () => {
   audio.paused ? audio.play() : audio.pause();
   stopAudio.textContent === "پلی" ? "مکث" : "پلی";
-  console.log(audio.buffered.end(0));
 });
 next.addEventListener("click", () => {
   audioIndex >= filesInput.files.length - 1 ? (audioIndex = 0) : audioIndex++;
