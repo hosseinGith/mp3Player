@@ -87,6 +87,7 @@ stopAudio.addEventListener("click", () => {
     ? (stopAudio.textContent = "پلی")
     : (stopAudio.textContent = "مکث");
 });
+
 next.addEventListener("click", () => {
   audioIndex >= filesInput.files.length - 1 ? (audioIndex = 0) : audioIndex++;
   setAudio();
