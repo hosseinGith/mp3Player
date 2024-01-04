@@ -20,17 +20,15 @@ let mouseX = {
   xOld: 0,
   x: 0,
 };
-console.log(widthAudioTimeCont);
 function setAudio() {
   if (!filesInput.files[audioIndex]) return;
   audio.src = URL.createObjectURL(filesInput.files[audioIndex]);
   fileName.textContent = filesInput.files[audioIndex].name;
   audio.play();
 }
-function changeAudioTime(X) {
+function changeAudioTime(x) {
   if (!isMouseDown) return;
-  mouseX.x = X;
-  console.log(X);
+  mouseX.x = x - audioTime.clientWidth / 2;
   mouseX.x = (mouseX.x / widthAudioTimeCont) * 100;
   width = mouseX.x;
   if (width >= 100) width = 100;
@@ -51,7 +49,7 @@ window.addEventListener("touchend", () => {
   isMouseDown = false;
 });
 container.addEventListener("mousemove", (e) => {
-  changeAudioTime(e.offsetX);
+  changeAudioTime(e.clientX);
 });
 container.addEventListener("touchmove", (e) => {
   changeAudioTime(e.touches[0].clientX - 10);
@@ -67,9 +65,7 @@ filesArea.addEventListener("click", function () {
   audio.pause();
 });
 volume.oninput = () => {
-  console.log();
   audio.volume = volume.value / 100;
-  console.log(volume.value / 100);
 };
 volume.addEventListener("", () => {});
 filesInput.addEventListener("change", () => {
@@ -87,11 +83,11 @@ preview.addEventListener("click", () => {
 });
 stopAudio.addEventListener("click", () => {
   audio.paused ? audio.play() : audio.pause();
-  stopAudio.textContent === "پلی" ? "مکث" : "پلی";
-  console.log(audio.buffered.end(0));
+  stopAudio.textContent === "مکث"
+    ? (stopAudio.textContent = "پلی")
+    : (stopAudio.textContent = "مکث");
 });
 next.addEventListener("click", () => {
   audioIndex >= filesInput.files.length - 1 ? (audioIndex = 0) : audioIndex++;
-  console.log(audio.currentTime);
   setAudio();
 });
